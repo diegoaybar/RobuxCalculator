@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Robux Calculator</title>
+    <title>Robux Tax Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Robux Calculator">
-    <meta name="description" content="Roblox tax calculator.">
-
-    <meta name="keywords" content="robux calculator, robux calc, robuxcalculator, robuxcalc, dgab">
+    <meta name="title" content="Robux Tax Calculator">
+    <meta name="description" content="Calculate Robux taxes instantly with our free Robux Tax Calculator for Roblox players.">
+    <meta name="keywords" content="robux tax calculator, robux calculator, roblox tax calculator, robux calc, roblox robux tax, calculate robux tax">
+    <meta name="author" content="DGAB">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
-    <meta name="author" content="DGAB">
+    <!-- Open Graph Metadata (for embeds like Facebook, Discord) -->
+    <meta property="og:title" content="Robux Tax Calculator">
+    <meta property="og:description" content="Easily calculate Robux taxes after Roblox's 30% cut with this free tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/robux-tax-calculator"> <!-- Replace with your URL -->
+    <meta property="og:image" content="https://yourwebsite.com/assets/images/robux.png"> <!-- Replace with your URL -->
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Robux Tax Calculator">
+    <meta name="twitter:description" content="Free tool to calculate Robux taxes for Roblox players.">
+    <meta name="twitter:image" content="https://yourwebsite.com/assets/images/robux.png"> <!-- Replace with your URL -->
     <link rel="icon" href="assets/images/robux.png" type="image/jpg">
-
-    <!--==================== SWIPER CSS ====================-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-    <!--==================== CSS ====================-->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJW345SFXC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-RJW345SFXC')
-    </script>
 </head>
-
 <body>
-    <!--==================== HEADER ====================-->
+    <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Robux Calculator</a>
+            <a href="#" class="nav__logo">Robux Tax Calculator</a>
         </nav>
     </header>
 
-    <!--==================== MAIN ====================-->
+    <!-- Main Content -->
     <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content grid">
-                    <div class="home__data">
-                        <h1 class="home__title">Robux Calculator</h1>
-                        <h3 class="home__subtitle">Robux Tax Calculator</h3>
-                        <form class="form-box">
-                            <input id="n1" type="number" placeholder="Number" autofocus />
-                            <button onclick="give()" type="button">Give</button>
-                            <button onclick="recive()" type="button">Recive</button>
-                            <h2 class="form-title">Si</h2>
-                            <script src="javascript/calculator.js">
-                            </script>
-                        </form>
+        <section class="calculator section" id="calculator">
+            <div class="calculator__container container">
+                <!-- Calculate Received Robux -->
+                <div class="calculator__content">
+                    <h2 class="calculator__title">Calculate Received Robux</h2>
+                    <div class="form-box">
+                        <input id="give-input" type="number" step="1" placeholder="Robux Given" aria-label="Robux Given" oninput="calculateReceived()" />
+                        <h3 id="received-result">You will receive <span class="result-number">0</span> <img src="assets/images/robux.png" alt="Robux Icon"> Robux</h3>
+                    </div>
+                </div>
+                <!-- Calculate Robux to Give -->
+                <div class="calculator__content">
+                    <h2 class="calculator__title">Calculate Robux to Give</h2>
+                    <div class="form-box">
+                        <input id="receive-input" type="number" step="1" placeholder="Robux to Receive" aria-label="Robux to Receive" oninput="calculateToGive()" />
+                        <h3 id="to-give-result">You need to give <span class="result-number">0</span> <img src="assets/images/robux.png" alt="Robux Icon"> Robux</h3>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Explanation Section -->
+        <section class="explanation container">
+            <h2>How to Use the Robux Tax Calculator</h2>
+            <p>
+                The Robux Tax Calculator helps Roblox players calculate how much Robux they’ll receive after the 30% Roblox tax or how much they need to give to get a specific amount after tax. 
+                Enter an amount in "Robux Given" to see what you’ll receive, or in "Robux to Receive" to see how much to give. Results update automatically as you type!
+            </p>
+        </section>
     </main>
+    <script src="javascript/calculator.js"></script>
 </body>
-
 </html>
